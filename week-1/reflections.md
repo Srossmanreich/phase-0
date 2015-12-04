@@ -53,3 +53,13 @@ rm: removes a file / document
 help: shows you all available commands built-into the shell
 
 ## 1.4 Forking and Cloning Reflection
+
+1. If you were going to write instructions for a new person on how to create a new repo, fork a repo, and clone a repo, what would they be? Why would you fork a repository as opposed to create a new one?
+
+If I was writing instructions for a new person on how to create a new repo, fork a repo, and clone a repo, I would direct them first to github. I would tell to hit the plus sign in the top right to create their repository. For forking, I would tell them to go to a repository they are exciting to work on, help with, or update and hit the fork button to bring a new branch just for them to their own github profile. To clone, I would tell them to copy the provided HTTP address from github, open their command line and travel to the directory they would like the clones repository to be added to, and then to type in the git clone <HTTP address> command.
+
+I would fork a repository when I wanted to work / help with an existing repository rather than completely start a new repository from scratch.
+
+2. What struggles did you have setting up git and GitHub? What did you learn in the process?
+
+Ironically, the hardest part for me was simply downloading GitHub. The setup on their site did not lead me to the right link and I eventually had to google the right one. Honestly, I learned that GitHub is easier to use than I thought (and easier to link up with your local device than I thought), but I still am anxious about beginning to use it for our coding projects (I am sure we will get to that soon though!).
