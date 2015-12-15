@@ -1,0 +1,35 @@
+p {
+	background-color: blue
+}
+
+.sample-class {
+	color: red
+}
+
+#sample-id {
+	font-size: 2em
+}
+
+div > span {
+	background-color: green
+}
+
+div + span {
+	background-color: yellow
+}
+
+a:link{
+	background-color: red
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+a:active{
+	font-size: 4em
+}
+
+div a:active{
+	color: blue;
+}
