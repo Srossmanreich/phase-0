@@ -1,0 +1,119 @@
+
+/**1. COLORS**/
+
+html {
+	background-color: #ffffff;
+}
+
+p, li {
+	color: #000080;
+}
+
+a {
+	color: #800080;
+}
+
+a:visited {
+	color: #ff0000
+}
+
+/**2. Two Columns**/
+
+.main{
+	max-width:80%;
+}
+
+ul {
+	display: inline-block;
+	max-width: 40%;
+}
+
+.left {
+	float: left;
+	margin-left: 5%;
+}
+
+.right {
+	float: right;
+	margin-left: 5%;
+}
+
+.left li, .right li {
+	padding-bottom: 3%;
+	margin-bottom: 3%;
+}
+
+.bottom div {
+	clear: both;
+}
+
+.desc p {
+	font-size: 0.5em;
+	padding: 0;
+	margin: 0;
+}
+
+/**3. Format the heading**/
+
+header {
+	font-weight: bold;
+	text-align: center;
+}
+
+hr {
+	max-width: 98%;
+}
+
+.first-letter {
+	font-size: 2.5em;
+}
+
+.rest {
+	font-size: 1.25em;
+}
+
+.inc {
+	font-size: .9em;
+}
+
+/**4. Geico**/
+
+.geico {
+	text-align: center;
+	font-size: .5em;
+}
+
+/**5. Add horizontal lines using CSS**/
+
+.line {
+	border-bottom: solid;
+	border-width: 1px;
+}
+
+
+/*
+
+What is important to know when linking an external file (like a stylesheet) to an HTML file?
+
+Make sure you have the right path and that if you move your images around or create new folders that you reflect this in the path you list in the image tag.
+
+
+What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+
+The best trick I used was setting a max width for whole objects as well as fiddling with the display and floats. The combination of the three made padding / margin changing work more as expected!
+
+What CSS did you use to modify the element style (like size, color, etc.)?
+
+I used font-size, color, background-color, etc. I really liked using "ems" for the actual sizing and found using the relative values made the sizing a lot easier than it had been for me in the past.
+
+Did you modify the HTML to include classes or ids? If so, which did you choose and why? If you didn't, how would you know which one to add to your HTML?
+
+I did modify the HTML to include classes. I tried to use class names that were descriptive; so it would be clear what the selecter was and what it was affecting.
+
+When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
+
+I thought our code was much cleaner! It is crazy that their site uses a table to display most of the content. Definitely NOT best practice!
+
+
+*/
+
