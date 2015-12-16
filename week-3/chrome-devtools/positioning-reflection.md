@@ -24,12 +24,12 @@ I thought this challenge was great and really made me a lot more comfortable wit
 #Screenshots
 
 ![](imgs/Change Color.png)
-![](imgs/Column)
-![](imgs/Row)
-![](imgs/Make Equidistant)
-![](imgs/Squares)
-![](imgs/Footer)
-![](imgs/Header)
-![](imgs/Sidebar)
-![](imgs/Creative)
+![](imgs/Column.png)
+![](imgs/Row.png)
+![](imgs/Make Equidistant.png)
+![](imgs/Squares.png)
+![](imgs/Footer.png)
+![](imgs/Header.png)
+![](imgs/Sidebar.png)
+![](imgs/Creative.png)
 
