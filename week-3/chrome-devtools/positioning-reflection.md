@@ -23,7 +23,7 @@ I thought this challenge was great and really made me a lot more comfortable wit
 
 #Screenshots
 
-![](/imgs/Change Color)
+![](imgs/Change Color.png)
 ![](imgs/Column)
 ![](imgs/Row)
 ![](imgs/Make Equidistant)
