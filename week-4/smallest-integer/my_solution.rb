@@ -12,11 +12,10 @@
 # If +list_of_nums+ is empty the method should return nil
 
 def smallest_integer(list_of_nums)
-  if list_of_nums.empty? == false
-  list_of_nums.sort!
-  return list_of_nums[0]
-  else
+  if list_of_nums.empty?
   return nil
+  else
+  return list_of_nums.sort[0]
   end
 end
 
