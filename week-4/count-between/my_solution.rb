@@ -15,7 +15,7 @@
 # Your Solution Below
 
 def count_between(list_of_integers, lower_bound, upper_bound)
-  return nil if list_of_integers.empty?
+  return 0 if list_of_integers.empty?
   	a = list_of_integers.select{ |v|
   		v >= lower_bound && v <= upper_bound
   	}
