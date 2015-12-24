@@ -10,6 +10,8 @@ Multiply number by itself -1 until the number = 0
 =end
 
 # Your Solution Below
+
+
 def factorial(number)
   
 	if number <= 1
@@ -17,7 +19,7 @@ def factorial(number)
 	
 	else
 	  
-	  x = number #3 or #5 or #100
+	  x = number 
 	  answer = 1
 	  
 	  until x == 0
@@ -33,3 +35,15 @@ end
 
 puts factorial(5)
 puts factorial(3)
+
+#Also:
+
+def factorial(number)
+
+	if number <= 1
+		return 1
+	else
+	(1..number).reduce(:*)
+	end
+end
+
