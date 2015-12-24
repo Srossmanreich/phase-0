@@ -47,7 +47,6 @@ end
 
 # 5. sentence_maker initial solution
 
-
 def sentence_maker(array)
 
 	sentence = ""
@@ -71,20 +70,9 @@ puts sentence_maker(["all","my","socks","are","dirty"])
 # 6. sentence_maker refactored solution
 
 def sentence_maker(array)
-
-	sentence = ""
-
-	array[0].capitalize!
-	
-	array[-1] << "."
-
-	array.each { |item| sentence = sentence + "#{item} "}
-
-	sentence = sentence.chomp(" ")
-
-	return sentence
-
+	"#{array.join(" ")}.".capitalize
 end
+
 
 
 
