@@ -33,26 +33,19 @@ We'll only select these values and push them to a new array
 # 1. Initial Solution
 
 def mode(array)
-	
 	hash = array.group_by{|i|i}
-	
 	new_array = hash.sort_by {|key,value| 
 		-value.size
 	}
-
 	i = new_array[0][1].size
-
 	mode_array = []
-
 	new_array.each {|value|
 		if value[1].length == i
 			mode_array << value
 		end
 	}
-
 	final = mode_array.map{|value| value[1]}
 	final.flatten.uniq.sort
-
 end
 
 print mode([1,2,2,3,4,4])
@@ -63,9 +56,7 @@ print mode([1,2,2,3,4,4])
 def mode(array)
 
 	hash = array.group_by
-	
 	i = hash.max_by{|key,value| value.size}[1].size
-	
 	hash.find_all{|key,value| value.size == i}.flatten.uniq
 	
 end
