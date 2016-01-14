@@ -1,7 +1,7 @@
 # Class Warfare, Validate a Credit Card Number
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, with: Heather ].
 # I spent [#] hours on this challenge.
 
 # Pseudocode
