@@ -30,26 +30,49 @@ class CreditCard
 	attr_writer :ccnumber
 
 	def initialize(ccnumber)
+		@odd = []
+		@even = []
 		@ccarray = ccnumber.to_s.split(//)
 		raise ArgumentError.new("Please input a correct cc number (16 digits)") if @ccarray.size != 16 
 	end
 
-	@odd = []
-	@even = []
-
-	def even_odd
-		@ccarray.each.with_index { |value, index| 
-			index % 2 == 0 ? @even << value : @odd << value }
+	def check_card
+		@ccarray.each.with_index {|value, index| (index.even? ? @even : @odd) << value}
+		@even.map!{|v|v.to_i*2}
+		@odd.map!{|v|v.to_i}
+		@even = @even.join("").to_s.split(//).map!{|v|v.to_i}
+		@sum = @even.reduce(:+) + @odd.reduce(:+)
+		@sum%10==0 ? true : false
 	end
-	
-	@odd
-
 
 end
 
-test = CreditCard.new(1234567891234567)
-test.even_odd
-p test
+card = CreditCard.new(4408041234567901)
+p card.check_card
+
+class CreditCard
+
+	attr_writer :ccnumber
+
+	def initialize(ccnumber)
+		@odd = []
+		@even = []
+		@ccarray = ccnumber.to_s.chars
+		raise ArgumentError.new("Please input a correct cc number (16 digits)") if @ccarray.size != 16 
+	end
+
+	def check_card
+		@ccarray.each.with_index {|value, index| (index.even? ? @even : @odd) << value.to_i}
+		@even = @even.map {|v| v * 2}.join("").chars.map &:to_i
+		(@sum = @even.reduce(:+) + @odd.reduce(:+)) % 10 == 0
+	end
+
+end
+
+card = CreditCard.new(4408041234567901)
+p card.check_card
+
+
 
 # Refactored Solution
 
@@ -58,3 +81,27 @@ p test
 
 
 # Reflection
+
+=begin
+1) What was the most difficult part of this challenge for you 
+and your pair?
+
+Making sure we were using methods destructively when we wanted to
+and had the correct elements in our method versus in the initialize
+
+2) What new methods did you find to help you when you 
+refactored?
+
+I didn't learn new methods but realized instead that some existing
+methods could help me out (like join, chars, reduce, etc.)
+
+3) What concepts or learnings were you able to solidify in 
+this challenge?
+
+What needs to go in the initialize when creating a new class.
+Some shorthand for if statements and reduce.
+
+=end
+
+
+
