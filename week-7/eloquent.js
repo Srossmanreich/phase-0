@@ -334,7 +334,7 @@ another language? If so, which concepts?
 I don't think so. I do feel like I am learning JS faster than I
 would have if I hadn't first jumped into Ruby.
 
-How do you feel about diving into JavaScript after reading 
+3) How do you feel about diving into JavaScript after reading 
 these chapters?
 
 Excited to dive in (although I miss Ruby already!)
