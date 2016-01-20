@@ -85,8 +85,8 @@ for you in ruby.
 4) What built-in methods did you find to incorporate in your 
 refactored solution?
 
-Some methods that mirrored the ruby methods and other JS only
-stuff that was useful.
+The toLocaleString method which pretty much did the challenge
+entirely for us ....
 
 */
 
