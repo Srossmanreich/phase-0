@@ -150,6 +150,50 @@ function median(array){
 var list = [2,1,3,4,6,5,7,8];
 console.log(median(list));
 
+//Release 5 (Andrew Kim)
+
+// 1.   As a user, I want to create a function that adds up the elements of an array and returns a sum.
+// 2.  As a user, I want a function that takes a list of numbers and returns their average.
+// 3.  As a user, I want a function that takes the middle number of a set of numbers.
+
+
+//SUM-refactored
+var list = [2,5,8,5,4,3,3];
+function sumOfSet(array){
+  var sum = 0;
+  for(var i = 0; i < array.length; i++) {
+    sum += array[i]
+  }
+  return sum;
+}
+console.log(sumOfSet(list));
+
+// not much I could find to change.
+
+//AVERAGE-refactored
+
+function mean(array){
+var mean = sumOfSet(array)/array.length;
+return Math.round(mean)}
+
+console.log(mean(list));
+
+// MEDIAN-refactored
+
+function median(array){
+  var median = array.sort();
+  var length = (median.length/2);
+  var odd = Math.round(median.length/2);
+    if (median.length % 2 != 0)
+      return (median[odd]);
+    else
+      return (median[length] + median[length-1])/2
+}
+
+console.log(median(list));
+
+// Again pretty DRY, but the else statement was unnecessary
+
 /*SUMMARY
 
 Our 'sum' test failed because the addition function wasn't
