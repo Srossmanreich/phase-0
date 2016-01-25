@@ -49,7 +49,7 @@ ON states.region_id = regions.id;
 
 CLUELESS IMAGE:
 
-!(outfit_matching.png "Outfit matching image")
+![alt_text](outfit_matching.png "Outfit matching image")
 
 REFLECT:
 What are databases for? -- Databases are used for collecting, sorting, and manipulating large quantities of connected data.
