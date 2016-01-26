@@ -24,14 +24,14 @@ var scores = [ [80, 70, 70, 100],
 // __________________________________________
 // Write your code below.
 
-var gradebook = [];
-
 var gradebook = students.reduce( 
   function(array, value) {
   array[value] = {};
   return array;
   },
 {});
+
+console.log(gradebook);
 
 for(var i in Object.keys(gradebook)){
   gradebook[Object.keys(gradebook)[i]]["testScores"] = scores[i];
@@ -46,7 +46,9 @@ gradebook.getAverage = function(name){
 };
 
 var average = function(array){
-  return array.reduce(function(a, b) {return a + b; }, 0) / (array.length);
+  return array.reduce(function(a, b) {
+    return a + b; 
+  }, 0) / (array.length);
 };
 
 console.log(gradebook.getAverage("Joseph"));

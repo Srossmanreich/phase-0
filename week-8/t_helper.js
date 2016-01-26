@@ -73,7 +73,7 @@ var officers = {
    5) Reveal the winner per each position
 */
 
-
+/*
 // __________________________________________
 // Initial Solution
 
@@ -120,11 +120,35 @@ officers.treasurer = Object.keys(t_counts).reduce(function(a, b){ return t_count
 
 
 console.log(officers);
-
+*/
 // __________________________________________
 // Refactored Solution
 
+/*Pseudocode
 
+*/
+
+for (var vote in votes) {
+  for (var position in votes[vote]) {
+    var candidate = votes[vote][position];
+    voteCount[position][candidate] = (voteCount[postion][candidate] || 0) + 1;
+  }
+}
+
+var officers = {};
+
+for (var pos in voteCount) {
+  var count = 0;
+  for (var name in voteCount[pos]) {
+    var votes = voteCount[pos][name];
+    if (votes > count) {
+      count = votes;
+      officers[pos] = name;
+    }
+  }
+}
+
+console.log(officers);
 
 
 

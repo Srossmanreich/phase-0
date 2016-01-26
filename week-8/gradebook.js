@@ -24,33 +24,79 @@ var scores = [ [80, 70, 70, 100],
 // __________________________________________
 // Write your code below.
 
+var gradebook = students.reduce(function(array, value){
+  array[value]={}
+  return array
+},{});
 
+for (var i in Object.keys(gradebook)){
+  gradebook[Object.keys(gradebook)[i]]["testScores"]=scores[i]
+};
 
+gradebook.addScore = function(name,score) {
+  gradebook[name]["testScores"].push(score);
+};
 
+gradebook.getAverage = function(name) {
+  return average(gradebook[name].testScores);
+};
 
-
-
+function average(array){
+  var sum = 0;
+  for (var i in array){
+    sum += array[i]
+  };
+  return sum/array.length;
+};
 
 
 // __________________________________________
 // Refactored Solution
 
+var gradebook = new Object();
 
+for (var i in students){
+  gradebook[students[i]]={"testScores": scores[i]}
+}
 
+gradebook.addScore = function(name,score) {
+  gradebook[name]["testScores"].push(score);
+};
 
+gradebook.getAverage = function(name) {
+  return average(gradebook[name].testScores);
+};
 
-
+function average(array){
+  var sum = 0;
+  for (var i in array){
+    sum += array[i]
+  };
+  return sum/array.length;
+};
 
 
 // __________________________________________
 // Reflect
 
+/*
+What did you learn about adding functions to objects?
+Functions in javascript are treated like items within an object
+(much different than how ruby and classes in ruby works)
 
+How did you iterate over nested arrays in JavaScript?
+We had to iterate over the array of object keys in order to access
+the values we needed.
 
-
-
-
-
+Were there any new methods you were able to incorporate? If so, 
+what were they and how did they work?
+Two new methods! Reduce, Object.keys. You give reduce a function whose
+parameters represent items in the array reduce is called on. Then you
+tell reduce (in the block) what to return given the values (which
+represent all values in the array). You also have to give reduce (after
+the block), the value you'd like the operation to start with. Object.keys
+takes an object and turns all of its keys into an array. This is useful
+if you want to use an array method on elements of an object.*/
 
 
 // __________________________________________
