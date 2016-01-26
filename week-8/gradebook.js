@@ -1,7 +1,7 @@
 /*
 Gradebook from Names and Scores
 
-I worked on this challenge [by myself, with:]
+I worked on this challenge [with Jonathan]
 This challenge took me [#] hours.
 
 You will work with the following two variables.  The first, students, holds the names of four students.
