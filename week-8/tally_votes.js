@@ -1,6 +1,6 @@
 // Tally Votes in JavaScript Pairing Challenge.
 
-// I worked on this challenge with:
+// I worked on this challenge with: Mollie
 // This challenge took me [#] hours.
 
 // These are the votes cast by each student. Do not alter these objects here.
@@ -65,29 +65,90 @@ var officers = {
 }
 
 // Pseudocode
-
+// 1. iterate through votes and pull names by position
+// 2. iterate further through position and pull candidate 
+//    names
+// 3. count how many times each candidate name appeared 
+//    per position
+// 4. record number of votes for each candidate for each 
+//    position in new object
+// 5. find the candidate with the most amount of votes
+// 6. choose candidate with highest number of votes and 
+//    record as winner
 
 // __________________________________________
 // Initial Solution
 
 
+for (var name in votes){
+  for(var position in votes[name]){
+    var candidate = votes[name][position]
+    voteCount[position][candidate] = (voteCount[position][candidate] || 0)+1;
+  }
+}
 
 
+for(var position in voteCount){
+  var counter = 0;
+  for(var candidate in voteCount[position]){
+    var votes = voteCount[position][candidate];
+        if (votes > counter) {
+          counter = votes;
+          officers[position] = candidate;
+        }
+    }
+}
 
+console.log(voteCount);
 
 
 // __________________________________________
 // Refactored Solution
 
+for (var name in votes){
+  for(var position in votes[name]){
+    var candidate = votes[name][position]
+      voteCount[position][candidate] = (voteCount[position][candidate] || 0)+1;
+      }
+  for(var position in voteCount){
+     var counter = 0;
+      for(var candidate in voteCount[position]){
+        var votes = voteCount[position][candidate];
+          if (votes > counter) {
+            counter = votes;
+            officers[position] = candidate;
+            }
+          }
+        }
+      };
 
-
-
+console.log(officers);
 
 
 // __________________________________________
 // Reflection
 
+/*
+1) What did you learn about iterating over nested objects 
+in JavaScript?
 
+It is sooooo much more difficult than ruby (way less intuitive).
+Sometimes you really have to deal with the keys of an object as an
+array to even access the values in a loop.
+
+2) Were you able to find useful methods to help you with this?
+
+Reduce was the big winner on this front, as well as some counter
+syntax and of course Object.keys
+
+What concepts were solidified in the process of working through 
+this challenge?
+
+Object.keys is solidified as well as calling values based on keys
+in an object. I still struggle a little with reduce due to its
+functionality being so versatile, but the more I use it the better
+I'm sure I'll get.
+*/
 
 
 

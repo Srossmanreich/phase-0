@@ -135,8 +135,6 @@ for (var vote in votes) {
   }
 }
 
-var officers = {};
-
 for (var pos in voteCount) {
   var count = 0;
   for (var name in voteCount[pos]) {
