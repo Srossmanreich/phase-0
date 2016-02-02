@@ -4,34 +4,41 @@
 // I worked on this challenge [by myself, with: ].
 // This challenge took me [#] hours.
 
-$(document).ready(function(){
+$(document).ready(function() {
 
-//RELEASE 0:
-  //link the image
+var bodyElement = $('body');
+var h1Element = $('.intro');
+bodyElement.css({'background-color': 'pink'});
 
-//RELEASE 1:
+h1Element.css({'color': 'green'});
+h1Element.css({'border': 'dashed 1px purple'});
+h1Element.css({'visibility': 'visible'});
 
-  //Link this script and the jQuery library to the jQuery_example.html file and analyze what this code does.
+$(".mascot h1").html("Fiddler Crabs");
 
-$('body').css({'background-color': 'pink'})
+$('img').on('mouseover', function(e){
+  e.preventDefault()
+  $(this).attr('src', 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Fiddler_crab.jpg');
+  $(this).css({'border': '10px solid red'}).animate({'borderWidth': '50px'}, 500);
+  $(this).animate({'width': '500px'}, 500);
+  $(this).animate({'opacity': 0.2}, 5000);
+});
 
-//RELEASE 2:
-  //Add code here to select elements of the DOM
+$('img').on('mouseout', function(e){
+  e.preventDefault()
+  $(this).attr('src', "./dbc_logo.png");
+  $(this).css({'border': '10px solid red'}).animate({'borderWidth': '1px'}, 500);
+  $(this).animate({'width': '350px'}, 500);
+  $(this).animate({'opacity': 1}, 5000);
+});
+});
 
+// Reflection:
 
-//RELEASE 3:
-  // Add code here to modify the css and html of DOM elements
-
-
-//RELEASE 4: Event Listener
-  // Add the code for the event listener here
-
-
-//RELEASE 5: Experiment on your own
-
-
-
-
-
-
-})  // end of the document.ready function: do not remove or write DOM manipulation below this.
+// What is jQuery?
+// 	jQuery is a library of commands that makes DOM manipulation way easier
+// What does jQuery do for you?
+// 	jQuery lets me easily make my static html / css interactive using JS.
+// What did you learn about the DOM while working on this challenge?
+// 	This is my first time using a library. I actually thought it would below
+// 	a lot easier. Jquery is like its own language a little.
