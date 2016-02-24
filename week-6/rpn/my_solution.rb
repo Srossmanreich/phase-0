@@ -67,9 +67,45 @@ calc.evaluate("1 2 +")
 
 # 4. Refactored Solution
 
+class RPNCalculator
 
+	def operation(operation, num1, num2)
+		case operation
+		when "+"
+			num1 + num2
+		when "-"
+			num2 - num1
+		when "*"
+			num1 * num2
+		else
+			raise ArgumentError.new("Input error!")
+		end
+	end
+	
+	def is_operation?(x)
+		x == "+" || x == "*" || x == "-"
+	end
 
+	def evaluate(string)
+		items = string.split(" ")
+		numbers = []
+		items.each do |item|
+			if is_operation?(item) == false
+				numbers << item.to_i
+			else
+				if numbers.length < 2
+					raise ArgumentError.new("Input error!")
+				end
+				numbers << operation(item,numbers.pop,numbers.pop)
+			end
+		end
+		numbers[0]
+	end
+end
 
+calc = RPNCalculator.new
+calc.evaluate("1 2 +")
 
 
 # Reflection
+#No Reflection Questions
