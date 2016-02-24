@@ -24,7 +24,7 @@ class RPNCalculator
 		if operation == "+"
 			num1 + num2
 		elsif operation == "-"
-			num1 - num2
+			num2 - num1
 		elsif operation == "*"
 			num1 * num2
 		end
@@ -44,7 +44,18 @@ class RPNCalculator
 
 		numbers = []
 
-		
+		items.each do |item|
+			if is_operation?(item) == false
+				numbers << item.to_i
+			else
+				if numbers.length < 2
+					raise ArgumentError.new("Input error!")
+				end
+				numbers << operation(item,numbers.pop,numbers.pop)
+			end
+		end
+
+		numbers[0]
 
 	end
 

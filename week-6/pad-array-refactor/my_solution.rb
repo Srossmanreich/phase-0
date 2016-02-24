@@ -3,25 +3,29 @@
 # I worked on this challenge [by myself, with: ].
 
 
-
-# First Person's solution I liked
-# What I learned from this solution
-# Copy solution here:
-
-
-
-
-
-# Second Person's solution I liked
-#    What I learned from this solution
-# Copy solution here:
-
-
-
-
 # My original solution:
 
+def pad!(array, min_size, value = nil) #destructive
+  if array.size >= min_size
+  	return array
+  else
+  	i = min_size - array.size
+  	i.times { array << value }
+  	array
+  end
+end
 
+
+
+def pad(array, min_size, value = nil) #non-destructive
+  new = array.clone
+  if min_size <= array.size
+    new
+  else 
+    (min_size - array.size).times {new << value}
+    new
+  end
+end
 
 # My refactored solution:
 
