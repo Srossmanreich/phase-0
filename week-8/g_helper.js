@@ -37,6 +37,8 @@ for(var i in Object.keys(gradebook)){
   gradebook[Object.keys(gradebook)[i]]["testScores"] = scores[i];
 };
 
+console.log(gradebook);
+
 gradebook.addScore = function(name,score){
   gradebook[name].testScores.push(score);
 };
