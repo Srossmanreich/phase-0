@@ -1,7 +1,7 @@
 /*
 Gradebook from Names and Scores
 
-I worked on this challenge [with Charlie]
+I worked on this challenge [by myself, with:]
 This challenge took me [#] hours.
 
 You will work with the following two variables.  The first, students, holds the names of four students.
@@ -12,91 +12,94 @@ Do not alter the students and scores code.
 
 */
 
-var students = ["Joseph", "Susan", "William", "Elizabeth"];
+var students = ["Joseph", "Susan", "William", "Elizabeth"]
 
 var scores = [ [80, 70, 70, 100],
                [85, 80, 90, 90],
                [75, 70, 80, 75],
-               [100, 90, 95, 85] ];
+               [100, 90, 95, 85] ]
+
+
+
 
 
 
 // __________________________________________
 // Write your code below.
 
-var gradebook = students.reduce(function(array, value){
-  array[value]={}
-  return array
-},{});
+var gradebook = {};
 
-for (var i in Object.keys(gradebook)){
-  gradebook[Object.keys(gradebook)[i]]["testScores"]=scores[i]
+for(var i in students){
+  gradebook[students[i]]={testScores:scores[i]}
 };
 
-gradebook.addScore = function(name,score) {
-  gradebook[name]["testScores"].push(score);
+gradebook.addScore = function(name,score){
+  gradebook[name]["testScores"].push(score)
 };
 
-gradebook.getAverage = function(name) {
+gradebook.getAverage = function(name){
   return average(gradebook[name].testScores);
 };
 
 function average(array){
   var sum = 0;
   for (var i in array){
-    sum += array[i]
+    sum += array[i]  
   };
-  return sum/array.length;
+  return sum / array.length;
 };
+
+console.log(gradebook);
+
+//Put testScores property in each student in gradebook and assign testScores the values of the respective student's scores
+
+
 
 
 // __________________________________________
 // Refactored Solution
 
-var gradebook = new Object();
 
-for (var i in students){
-  gradebook[students[i]]={"testScores": scores[i]}
-}
-
-gradebook.addScore = function(name,score) {
-  gradebook[name]["testScores"].push(score);
+var gradebook = {
+  addScore: function(name,score){gradebook[name]["testScores"].push(score)},
+  getAverage: function(name){return average(gradebook[name].testScores)},
 };
 
-gradebook.getAverage = function(name) {
-  return average(gradebook[name].testScores);
+for(var i in students){
+  gradebook[students[i]]={testScores:scores[i]}
 };
 
 function average(array){
   var sum = 0;
   for (var i in array){
-    sum += array[i]
+    sum += array[i]  
   };
-  return sum/array.length;
+  return sum / array.length;
 };
+
+console.log(gradebook);
+
+
 
 
 // __________________________________________
 // Reflect
 
-/*
-What did you learn about adding functions to objects?
-Functions in javascript are treated like items within an object
-(much different than how ruby and classes in ruby works)
 
-How did you iterate over nested arrays in JavaScript?
-We had to iterate over the array of object keys in order to access
-the values we needed.
+// What did you learn about adding functions to objects?
 
-Were there any new methods you were able to incorporate? If so, 
-what were they and how did they work?
-Two new methods! Reduce, Object.keys. You give reduce a function whose
-parameters represent items in the array reduce is called on. Then you
-tell reduce (in the block) what to return given the values (which
-represent all values in the array). You also have to give reduce (after
-the block), the value you'd like the operation to start with. Object.keys
-takes an object and turns all of its keys into an array. This is useful
-if you want to use an array method on elements of an object.*/
+// It is actually pretty straightforward!
+
+// How did you iterate over nested arrays in JavaScript?
+
+// We used for loops and were careful to pay attention to the elements we were grabbing.
+
+// Were there any new methods you were able to incorporate? If so, what were they and 
+// how did they work?
+
+// Quite the opposite happened! I pushed for us to use a reduce method that really caused
+// us to spin our wheels for quite some time. When Charlie pulled me back to focus on the
+// simple approach using more basic methods, we solved the problem way faster!
 
 
 // __________________________________________
