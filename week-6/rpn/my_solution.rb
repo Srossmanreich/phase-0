@@ -109,3 +109,59 @@ calc.evaluate("1 2 +")
 
 # Reflection
 #No Reflection Questions
+
+class RPNCalculator
+
+	def operation(op,num1,num2)
+		case op
+		when "*"
+			num1*num2
+		when "+"
+			num1+num2
+		when "-"
+			num2-num1
+		else
+			raise ArgumentError.new("You did not input a valid operation")
+		end
+	end
+
+	def operation?(x)
+		x=="+" || x=="-" || x=="*"
+	end
+
+	def evaluate(string)
+		values = string.split(" ")
+		numbers = []
+		values.each do |item|
+			if operation?(item) == false
+				numbers << item.to_i
+			else
+				if numbers.length < 2
+					raise ArgumentError.new("Didn't input enough")
+				else
+					numbers << operation(item,numbers.pop,numbers.pop)
+				end
+			end
+		numbers[0]
+		end
+	end
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
