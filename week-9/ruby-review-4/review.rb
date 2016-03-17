@@ -124,12 +124,6 @@ my_pizza = Pizza.new("thin","large",["sausage","pepperoni"])
 p my_pizza.toppings
 p my_pizza.cook
 
-# 4. Refactored Solution
-
-
-
-
-
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
